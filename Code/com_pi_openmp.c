@@ -31,13 +31,12 @@ int main (int argc, const char *argv[]) {
         for (i=0; i < steps; i++) {
             x = (i+0.5)*step;
             sum += 4.0 / (1.0+x*x); 
-        
+        }
 
         // Out of the parallel region, finialize computation
         pi = step * sum;
         delta = omp_get_wtime() - start;
         printf("PI = %.16g computed in %.4g seconds\n", pi, delta);
-	}
 
     }
     
